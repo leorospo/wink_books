@@ -17,7 +17,7 @@ export default class SearchBar extends React.Component {
     onSubmit = (e) => {
         e.preventDefault()
         if (this.state.searchTerm !== '') {
-            this.props.printBooks(this.state.searchTerm)
+            this.props.newSearch(this.state.searchTerm)
         } else {
             alert('Write something')
         }
