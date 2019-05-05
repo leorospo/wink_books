@@ -1,11 +1,6 @@
 import React from 'react';
 
 export default class Pagination extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-        }
-    }
 
     paginationBuilder = () => {
         const books = this.props.booksFound

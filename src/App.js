@@ -1,4 +1,5 @@
 import React from 'react';
+import 'normalize.css'
 import './App.css';
 import Books from './components/Books';
 import SearchBar from './components/SearchBar'
@@ -11,6 +12,7 @@ class App extends React.Component {
             books: [],
             currentQuery: undefined,
             booksFound: 0,
+            loading: false,
         }
     }
 
@@ -40,13 +42,19 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="">
+            <div className="fullscreen-app">
+                <div className='heading'>
+                    <h1 className=''>Google Books App</h1>
+                    <h3>Application test project for Wink s.r.l.</h3>
+                </div>
+                <div></div>
                 <SearchBar newSearch={this.newSearch} />
                 <Books
                     books={this.state.books}
                     booksFound={this.state.booksFound}
                     displayPage={this.displayPage}
                     currentQuery={this.state.currentQuery}
+                    loading={this.state.loading}
                 />
             </div>
         )

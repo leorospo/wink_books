@@ -26,10 +26,13 @@ export default class SearchBar extends React.Component {
     render() {
         return (
             <form onSubmit={this.onSubmit}>
+                <label>Search in Google Books:</label>
                 <input
                     type='text'
                     value={this.state.searchTerm}
-                    onChange={this.searchTermHandler} />
+                    onChange={this.searchTermHandler}
+                    placeholder='Type something...'
+                />
                 <button type='submit'>Search</button>
             </form>
 
