@@ -24,7 +24,6 @@ class App extends React.Component {
         getBooks(query)
             .then(r => r.json())
             .then(r => {
-                console.log(r)
                 this.setState({
                     books: r.items || [],
                     booksFound: r.totalItems,
