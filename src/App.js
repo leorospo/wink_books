@@ -51,7 +51,7 @@ class App extends React.Component {
             <div className="fullscreen-app">
                 <div className='heading'>
                     <h1 className=''>Google Books App</h1>
-                    {/* <h3>Application test project for Wink s.r.l.</h3> */}
+                    <h3>Application test project for Wink s.r.l.</h3>
                 </div>
                 <SearchBar
                     newSearch={this.newSearch}
