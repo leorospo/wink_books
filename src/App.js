@@ -54,7 +54,6 @@ class App extends React.Component {
                     <h1 className=''>Google Books App</h1>
                     {/* <h3>Application test project for Wink s.r.l.</h3> */}
                 </div>
-                <div></div>
                 <SearchBar
                     newSearch={this.newSearch}
                     loading={this.state.loading}

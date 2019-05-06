@@ -14,20 +14,20 @@ export default class Books extends React.Component {
         return (
             <div className='parent-width'>
 
-                <div className='books-wrapper'>
-                    <div className='book'>
-                        <img src='http://books.google.com/books/content?id=-FNOPk_9tGgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api'></img>
-                        <div className='book-info'>
-                            <div className='book-genre'>Genere - anno</div>
-                            <div className='book-title'>Titolo del libro molto lungo che smargina</div>
-                        </div>
-                    </div>
-                </div>
-
-
                 {this.props.books.length === 0 && this.props.currentQuery ?
                     <div>No books found</div> :
-                    this.props.books.map(el => <p id={el.id} key={el.id}>{el.volumeInfo.title}</p>)
+                    <div className='books-wrapper'>
+                        {this.props.books.map(el =>
+                            <div className='book' id={el.id} key={el.id}>
+                                <img src={el.volumeInfo.imageLinks ? el.volumeInfo.imageLinks.smallThumbnail : ''}></img>
+                                <div className='book-info'>
+                                    <div className='book-genre'>{el.volumeInfo.categories && `${el.volumeInfo.categories.map(el => { return (el + ' ') })}`} {el.volumeInfo.publishedDate && `- ${el.volumeInfo.publishedDate}`}</div>
+                                    <div className='book-title'>{el.volumeInfo.title}</div>
+                                    <div className='book-intro'>{el.volumeInfo.description}</div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 }
                 <Pagination
                     booksFound={this.props.booksFound}
