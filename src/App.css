@@ -1,31 +1,88 @@
 html, body, #root {
-  height: 100%;
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background-color: rgba(245, 245, 245, 1);
-  color: rgba(30, 30, 30, 1)
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgba(245, 245, 245, 1);
+    color: rgba(30, 30, 30, 1)
+}
+
+body {
+    min-width: 320px;
 }
 
 .fullscreen-app {
-  height: 100%;
-  padding: 0px 16px;
+    height: 100%;
+    padding: 0px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
-  margin: 12px 0px 6px;
-  font-family: 'Bree Serif', serif;
-  font-size: 32px;
-  color: rgba(60, 60, 60, 1);
-  line-height: 44px;
+    margin: 12px 0px 6px;
+    font-family: 'Bree Serif', serif;
+    font-size: 32px;
+    color: #66C0B9;
+    line-height: 44px;
 }
 
 h3 {
-  margin: 4px 0px;
-  font-size: 15px;
-  font-weight: 300;
-  color: rgba(120, 120, 120, 1)
+    margin: 4px 0px;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(120, 120, 120, 1)
 }
 
 .heading {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 420px;
+}
+
+.search-bar > label {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #878787;
+    
+}
+
+.search-bar-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.search-bar-wrapper {
+    margin-top: 8px;
+}
+
+.search-bar-wrapper > .search-input {
+height: 40px;
+width: calc(100% - 71px);
+
+border: 0px solid transparent;
+box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+border-radius: 6px 0px 0px 6px;
+padding: 0px 8px;
+
+}
+
+.search-bar-wrapper > .search-btn {
+    height: 40px;
+    width: 71px;
+    padding: auto;
+
+    border: 0px solid transparent;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 6px 6px 0px;
+    background-color: #98B52B;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.15px
 }
