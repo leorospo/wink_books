@@ -25,12 +25,18 @@ export default class SearchBar extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
-                <input
-                    type='text'
-                    value={this.state.searchTerm}
-                    onChange={this.searchTermHandler} />
-                <button type='submit'>Search</button>
+            <form className='search-bar' onSubmit={this.onSubmit}>
+                <label>Search in Google Books:</label>
+                <div className='search-bar-wrapper'>
+                    <input
+                        className='search-input'
+                        type='text'
+                        value={this.state.searchTerm}
+                        onChange={this.searchTermHandler}
+                        placeholder='Type something...'
+                    />
+                    <button className='search-btn' type='submit' disabled={this.props.loading}>Search</button>
+                </div>
             </form>
 
         )
