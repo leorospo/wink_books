@@ -19,23 +19,30 @@ class App extends React.Component {
     newSearch = query => {
         this.setState({
             currentQuery: query,
+            loading: true,
         })
         getBooks(query)
             .then(r => r.json())
             .then(r => {
+                console.log(r)
                 this.setState({
                     books: r.items || [],
                     booksFound: r.totalItems,
+                    loading: false,
                 })
             })
     }
 
     displayPage = page => {
+        this.setState({
+            loading: true,
+        })
         getBooks(this.state.currentQuery, page)
             .then(r => r.json())
             .then(r => {
                 this.setState({
                     books: r.items,
+                    loading: false,
                 })
             })
     }
@@ -45,10 +52,13 @@ class App extends React.Component {
             <div className="fullscreen-app">
                 <div className='heading'>
                     <h1 className=''>Google Books App</h1>
-                    <h3>Application test project for Wink s.r.l.</h3>
+                    {/* <h3>Application test project for Wink s.r.l.</h3> */}
                 </div>
                 <div></div>
-                <SearchBar newSearch={this.newSearch} />
+                <SearchBar
+                    newSearch={this.newSearch}
+                    loading={this.state.loading}
+                />
                 <Books
                     books={this.state.books}
                     booksFound={this.state.booksFound}

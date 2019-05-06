@@ -11,6 +11,7 @@ export default class Pagination extends React.Component {
                 pages.push(++pageNum)
             }
         }
+        pages.pop()
         return pages
     }
 

@@ -29,13 +29,13 @@ export default class SearchBar extends React.Component {
                 <label>Search in Google Books:</label>
                 <div className='search-bar-wrapper'>
                     <input
-                        class='search-input'
+                        className='search-input'
                         type='text'
                         value={this.state.searchTerm}
                         onChange={this.searchTermHandler}
                         placeholder='Type something...'
                     />
-                    <button class='search-btn' type='submit'>Search</button>
+                    <button className='search-btn' type='submit' disabled={this.props.loading}>Search</button>
                 </div>
             </form>
 
